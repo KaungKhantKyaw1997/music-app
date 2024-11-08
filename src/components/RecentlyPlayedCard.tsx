@@ -52,13 +52,13 @@ const RecentlyPlayedCard: React.FC<RecentlyPlayedCardProps> = ({
         </div>
       </div>
       <div className="flex-1">
-        <h4 className="text-xs font-bold text-gray-800">{album}</h4>
+        <h4 className="text-xs font-medium text-gray-800">{album}</h4>
       </div>
       <div className="flex-1">
-        <p className="text-xs font-semibold text-gray-600">{artist}</p>
+        <p className="text-xs font-normal text-gray-600">{artist}</p>
       </div>
       <div className="flex-shrink-0">
-        <p className="text-xs font-semibold text-gray-500">
+        <p className="text-xs font-normal text-gray-500">
           {formatDuration(trackDuration)}
         </p>
       </div>

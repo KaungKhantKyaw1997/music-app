@@ -51,7 +51,7 @@ const LeftMenu: React.FC = () => {
             onClick={toggleProfile}
             className="flex items-center space-x-2 text-sm"
           >
-            <p className="text-lg text-black font-semibold">Joshua</p>
+            <p className="text-lg text-black font-medium">Joshua</p>
             <Image
               src="/icons/down-arrow.svg"
               alt="Down Arrow"
@@ -67,15 +67,15 @@ const LeftMenu: React.FC = () => {
               }}
             >
               <div className="flex justify-between items-center pb-1">
-                <p className="text-xs text-[#C9466F] font-semibold border border-[#C9466F] px-1 rounded-sm">
+                <p className="text-xs text-[#C9466F] border border-[#C9466F] px-1 rounded-sm">
                   PREMIUM
                 </p>
-                <p className="text-xs text-gray-400 font-semibold">
+                <p className="text-xs text-gray-400 font-normal">
                   Through 11/2
                 </p>
               </div>
               <div className="flex items-center justify-between space-x-8">
-                <label className="text-xs text-gray-600 font-semibold">
+                <label className="text-xs text-gray-600 font-normal">
                   Private
                 </label>
                 <div
@@ -92,7 +92,7 @@ const LeftMenu: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between space-x-8">
-                <label className="text-xs text-gray-600 font-semibold">
+                <label className="text-xs text-gray-600 font-normal">
                   Explicit Filter
                 </label>
                 <div
@@ -113,7 +113,7 @@ const LeftMenu: React.FC = () => {
                 </div>
               </div>
               <div className="flex items-center justify-between space-x-8">
-                <label className="text-xs text-gray-600 font-semibold">
+                <label className="text-xs text-gray-600 font-normal">
                   Friend Activity
                 </label>
                 <div
@@ -133,11 +133,11 @@ const LeftMenu: React.FC = () => {
                   />
                 </div>
               </div>
-              <p className="text-xs text-gray-600 font-semibold">
+              <p className="text-xs text-gray-600 font-normal">
                 Account Settings
               </p>
               <div className="flex justify-end items-center pb-2">
-                <p className="text-xs text-gray-400 font-semibold pe-2">
+                <p className="text-xs text-gray-400 pe-2 font-normal">
                   Log out
                 </p>
                 <Image
@@ -149,20 +149,20 @@ const LeftMenu: React.FC = () => {
               </div>
             </div>
           )}
-          <p className="text-xs text-gray-400 font-semibold border border-gray-400 px-1 rounded-sm text-center">
+          <p className="text-xs text-gray-400 border border-gray-400 px-1 rounded-sm text-center">
             PREMIUM
           </p>
         </div>
       </div>
       <div>
         <div className="flex justify-between items-center mb-4 mt-8 px-2">
-          <h3 className="text-md font-bold text-gray-400">BROWSE</h3>
+          <h3 className="text-md font-medium text-gray-400">BROWSE</h3>
         </div>
         <ul className="space-y-2">
           {browserItems.map((item, index) => (
             <li key={index} className="flex items-center space-x-4 p-2">
               <Image src={item.icon} alt={item.label} width={24} height={24} />
-              <span className="text-md text-gray-600 font-semibold">
+              <span className="text-md text-gray-600 font-medium">
                 {item.label}
               </span>
             </li>
@@ -171,14 +171,14 @@ const LeftMenu: React.FC = () => {
       </div>
       <div>
         <div className="flex justify-between items-center mb-4 mt-8 px-2">
-          <h3 className="text-md font-bold text-gray-400">YOUR PLAYLISTS</h3>
+          <h3 className="text-md font-medium text-gray-400">YOUR PLAYLISTS</h3>
           <Image src="/icons/add.svg" alt="Add" width={24} height={24} />
         </div>
         <ul className="space-y-2">
           {playlistItems.map((item, index) => (
             <li key={index} className="flex items-center space-x-4 p-2">
               <Image src={item.icon} alt={item.label} width={24} height={24} />
-              <span className="text-md text-gray-600 font-semibold">
+              <span className="text-md text-gray-600 font-medium">
                 {item.label}
               </span>
             </li>

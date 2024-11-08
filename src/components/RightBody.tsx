@@ -146,7 +146,7 @@ const RightBody: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-1">
+    <div className="lg:flex lg:flex-1">
       <div
         className={`lg:hidden fixed left-0 top-0 w-64 bg-gray-600 text-white h-full p-2 
       ${isMenuOpen ? "z-20 bg-opacity-90" : "hidden"} 
@@ -170,7 +170,7 @@ const RightBody: React.FC = () => {
       </div>
 
       <div className="flex-1 bg-white rounded-br-[3rem] rounded-bl-[3rem] lg:rounded-bl-[0rem]">
-        <div className="flex px-8 lg:px-16 justify-between items-center mb-6">
+        <div className="flex px-8 lg:px-16 justify-between items-center">
           <div className="flex items-center space-x-4 lg:space-x-0">
             <button onClick={toggleMenu} className="block lg:hidden mt-10">
               <Image src="/icons/menu.svg" alt="Menu" width={24} height={24} />
@@ -184,13 +184,13 @@ const RightBody: React.FC = () => {
           />
         </div>
 
-        <div className="px-8 lg:px-16 mb-6 w-full">
+        <div className="mb-2 w-full">
           <CardList />
         </div>
 
         <div className="flex flex-col lg:flex-row px-8 lg:px-16 justify-between mb-6 lg:space-x-12 space-y-8 lg:space-y-0">
           <div className="w-full lg:w-2/5">
-            <h3 className="text-xl font-semibold text-gray-800 text-left mb-4">
+            <h3 className="text-xl font-medium text-gray-800 text-left mb-4">
               Recently Played
             </h3>
             <div className="space-y-4">
@@ -206,10 +206,10 @@ const RightBody: React.FC = () => {
             </div>
           </div>
           <div className="w-full lg:w-3/5">
-            <h3 className="text-xl font-semibold text-gray-800 text-left mb-4">
+            <h3 className="text-xl font-medium text-gray-800 text-left mb-4">
               Recommended For You
             </h3>
-            <div className="flex flex-col lg:flex-row space-x-0 lg:space-x-4">
+            <div className="flex flex-col md:flex-row lg:flex-row space-x-0 md:space-x-4 lg:space-x-4">
               {recommendations.map((track: Album) => (
                 <RecommendationCard
                   key={track.idAlbum}

@@ -104,14 +104,14 @@ const Footer: React.FC = () => {
           className="rounded-full border-[#E85599] border-4"
         />
         <div className="flex flex-col">
-          <h4 className="text-lg font-semibold break-words">
-            {track.strAlbum}
-          </h4>
-          <p className="text-sm opacity-70 break-words">{track.strArtist}</p>
+          <h4 className="text-lg font-medium break-words">{track.strAlbum}</h4>
+          <p className="text-sm font-normal opacity-70 break-words">
+            {track.strArtist}
+          </p>
         </div>
       </div>
 
-      <div className="flex items-center justify-center lg:justify-end w-full lg:w-auto space-x-0 lg:space-x-4">
+      <div className="flex items-center justify-center lg:justify-end w-full lg:w-auto space-x-4">
         <Image
           src="/icons/shuffle.svg"
           alt="Shuffle"

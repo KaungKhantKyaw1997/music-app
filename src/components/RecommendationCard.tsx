@@ -39,8 +39,8 @@ const RecommendationCard: React.FC<RecommendationCardProps> = ({
         ></div>
       </div>
       <div className="mt-2">
-        <h4 className="text-lg font-semibold text-gray-800">{album}</h4>
-        <p className="text-sm text-gray-600">{artist}</p>
+        <h4 className="text-md font-medium text-gray-800">{album}</h4>
+        <p className="text-xs font-normal text-gray-600">{artist}</p>
       </div>
     </div>
   );

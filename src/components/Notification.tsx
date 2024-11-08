@@ -56,14 +56,14 @@ const Notification: React.FC<NotificationProps> = ({
                 />
               </div>
               <div className="flex-1">
-                <p className="text-xs font-semibold text-gray-600">
+                <p className="text-xs font-normal text-gray-600">
                   {notification.title}
                 </p>
-                <p className="text-xs font-semibold text-gray-800">
+                <p className="text-xs font-medium text-gray-800">
                   {notification.description}
                 </p>
               </div>
-              <div className="text-xs text-gray-400 whitespace-nowrap pe-4">
+              <div className="text-xs font-normal text-gray-400 whitespace-nowrap pe-4">
                 {notification.time}
               </div>
             </div>
