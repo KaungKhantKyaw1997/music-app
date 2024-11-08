@@ -9,6 +9,15 @@ import Notification from "./Notification";
 import Image from "next/image";
 import LeftMenu from "../components/LeftMenu";
 
+interface Track {
+  idAlbum: string;
+  strAlbum: string;
+  strArtist: string;
+  strAlbumThumb: string;
+  intDuration: number;
+  idArtist?: string;
+}
+
 interface Album {
   idAlbum: string;
   strAlbum: string;
@@ -39,7 +48,7 @@ const RightBody: React.FC = () => {
       strAlbumThumb: "/images/default-image.jpg",
     },
   ]);
-  const [recentlyPlayed, setRecentlyPlayed] = useState<any[]>([
+  const [recentlyPlayed, setRecentlyPlayed] = useState<Track[]>([
     {
       idAlbum: "1",
       strAlbum: "Album 1",
@@ -109,7 +118,7 @@ const RightBody: React.FC = () => {
           const recentlyPlayedData = data.album.slice(5, 9);
 
           const recentlyPlayedWithDetails = await Promise.all(
-            recentlyPlayedData.map(async (track: any) => {
+            recentlyPlayedData.map(async (track: Track) => {
               const trackResponse = await axios.get(
                 `track.php?m=${track.idAlbum}`
               );
@@ -124,7 +133,9 @@ const RightBody: React.FC = () => {
             })
           );
 
-          setRecentlyPlayed(recentlyPlayedWithDetails.filter(Boolean));
+          setRecentlyPlayed(
+            recentlyPlayedWithDetails.filter(Boolean) as Track[]
+          );
         }
       } catch (error) {
         console.error("Error fetching recommendations or tracks:", error);
@@ -177,13 +188,13 @@ const RightBody: React.FC = () => {
           <CardList />
         </div>
 
-        <div className="flex flex-col lg:flex-row px-8 lg:px-16 justify-between mb-6 lg:space-x-24 space-y-8 lg:space-y-0">
+        <div className="flex flex-col lg:flex-row px-8 lg:px-16 justify-between mb-6 lg:space-x-12 space-y-8 lg:space-y-0">
           <div className="w-full lg:w-2/5">
             <h3 className="text-xl font-semibold text-gray-800 text-left mb-4">
               Recently Played
             </h3>
             <div className="space-y-4">
-              {recentlyPlayed.map((track: any) => (
+              {recentlyPlayed.map((track: Track) => (
                 <RecentlyPlayedCard
                   key={track.idAlbum}
                   album={track.strAlbum}
@@ -199,7 +210,7 @@ const RightBody: React.FC = () => {
               Recommended For You
             </h3>
             <div className="flex flex-col lg:flex-row space-x-0 lg:space-x-4">
-              {recommendations.map((track) => (
+              {recommendations.map((track: Album) => (
                 <RecommendationCard
                   key={track.idAlbum}
                   album={track.strAlbum}

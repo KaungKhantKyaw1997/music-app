@@ -3,8 +3,17 @@ import Image from "next/image";
 import { useState, useEffect } from "react";
 import axios from "../utils/axiosInstance";
 
+interface Track {
+  idAlbum: string;
+  strAlbum: string;
+  strArtist: string;
+  strAlbumThumb: string;
+  intDuration: number;
+  idArtist?: string;
+}
+
 const Footer: React.FC = () => {
-  const [recentlyPlayed, setRecentlyPlayed] = useState<any[]>([]);
+  const [recentlyPlayed, setRecentlyPlayed] = useState<Track[]>([]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
   const [volume, setVolume] = useState(70);
 
@@ -18,7 +27,7 @@ const Footer: React.FC = () => {
           const recentlyPlayedData = data.album.slice(0, 3);
 
           const recentlyPlayedWithDetails = await Promise.all(
-            recentlyPlayedData.map(async (track: any) => {
+            recentlyPlayedData.map(async (track: Track) => {
               const trackResponse = await axios.get(
                 `track.php?m=${track.idAlbum}`
               );

@@ -34,13 +34,18 @@ const Notification: React.FC<NotificationProps> = ({
 
       {isOpen && (
         <div
-          className="bg-white p-4 absolute right-0 mb-12 mr-4 z-10 rounded-xl shadow-md space-y-4 border border-gray-200"
+          className="bg-white py-4 absolute right-0 mb-12 mr-4 z-10 rounded-xl shadow-md space-y-4 border border-gray-200"
           style={{
             animation: isOpen ? "slideDown 0.3s ease-out" : "none",
           }}
         >
-          {notifications.map((notification) => (
-            <div key={notification.id} className="flex items-center space-x-4">
+          {notifications.map((notification, index) => (
+            <div
+              key={notification.id}
+              className={`flex items-center space-x-4 ps-4 py-2 ${
+                index === 1 ? "bg-[#F0F0F0]" : ""
+              }`}
+            >
               <div className="w-12 h-12 rounded-full overflow-hidden">
                 <Image
                   src={notification.image}
@@ -58,7 +63,7 @@ const Notification: React.FC<NotificationProps> = ({
                   {notification.description}
                 </p>
               </div>
-              <div className="text-xs text-gray-400 whitespace-nowrap">
+              <div className="text-xs text-gray-400 whitespace-nowrap pe-4">
                 {notification.time}
               </div>
             </div>

@@ -34,9 +34,11 @@ const RecentlyPlayedCard: React.FC<RecentlyPlayedCardProps> = ({
   return (
     <div className="group flex items-center space-x-2 bg-white p-2 rounded-md hover:bg-gray-200 relative cursor-pointer">
       <div className="flex-shrink-0 relative">
-        <img
+        <Image
           src={imageUrl}
           alt={album}
+          width={24}
+          height={24}
           className="w-10 h-10 object-cover rounded-md group-hover:opacity-50"
         />
         <div className="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100">
